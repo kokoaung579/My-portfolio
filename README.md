@@ -32,3 +32,4 @@ npm run build
 - CV download interaction
 - Footer social/navigation links
 - Responsive mobile/tablet/desktop layouts
+# Portfolio deployment update
