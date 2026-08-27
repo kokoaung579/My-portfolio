@@ -29,7 +29,12 @@ import {
   Smartphone,
   Terminal,
   X,
+  type LucideIcon,
 } from 'lucide-react';
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -40,18 +45,116 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
+/* =========================================================
+   PARTICLES
+========================================================= */
+
 const particles = [
-  { x: '5%', y: '18%', size: '3px', color: '81 82% 68%', duration: '5s', delay: '-1s', dx: '18px', dy: '-22px' },
-  { x: '15%', y: '70%', size: '2px', color: '15 100% 68%', duration: '6s', delay: '-3s', dx: '-15px', dy: '18px' },
-  { x: '28%', y: '34%', size: '2px', color: '184 57% 70%', duration: '5.5s', delay: '-2s', dx: '21px', dy: '11px' },
-  { x: '40%', y: '12%', size: '2px', color: '15 100% 68%', duration: '7s', delay: '-4s', dx: '-20px', dy: '17px' },
-  { x: '53%', y: '28%', size: '3px', color: '81 82% 68%', duration: '5.8s', delay: '-1.8s', dx: '12px', dy: '-18px' },
-  { x: '64%', y: '14%', size: '2px', color: '184 57% 70%', duration: '4.3s', delay: '-2.4s', dx: '18px', dy: '16px' },
-  { x: '78%', y: '32%', size: '3px', color: '15 100% 68%', duration: '6.7s', delay: '-3.2s', dx: '-14px', dy: '-20px' },
-  { x: '92%', y: '22%', size: '2px', color: '81 82% 68%', duration: '5.1s', delay: '-1.4s', dx: '10px', dy: '20px' },
-  { x: '84%', y: '58%', size: '2px', color: '184 57% 70%', duration: '6.4s', delay: '-4.2s', dx: '-19px', dy: '12px' },
-  { x: '8%', y: '86%', size: '2px', color: '184 57% 70%', duration: '5.7s', delay: '-1.6s', dx: '15px', dy: '-17px' },
+  {
+    x: '5%',
+    y: '18%',
+    size: '3px',
+    color: '81 82% 68%',
+    duration: '5s',
+    delay: '-1s',
+    dx: '18px',
+    dy: '-22px',
+  },
+  {
+    x: '15%',
+    y: '70%',
+    size: '2px',
+    color: '15 100% 68%',
+    duration: '6s',
+    delay: '-3s',
+    dx: '-15px',
+    dy: '18px',
+  },
+  {
+    x: '28%',
+    y: '34%',
+    size: '2px',
+    color: '184 57% 70%',
+    duration: '5.5s',
+    delay: '-2s',
+    dx: '21px',
+    dy: '11px',
+  },
+  {
+    x: '40%',
+    y: '12%',
+    size: '2px',
+    color: '15 100% 68%',
+    duration: '7s',
+    delay: '-4s',
+    dx: '-20px',
+    dy: '17px',
+  },
+  {
+    x: '53%',
+    y: '28%',
+    size: '3px',
+    color: '81 82% 68%',
+    duration: '5.8s',
+    delay: '-1.8s',
+    dx: '12px',
+    dy: '-18px',
+  },
+  {
+    x: '64%',
+    y: '14%',
+    size: '2px',
+    color: '184 57% 70%',
+    duration: '4.3s',
+    delay: '-2.4s',
+    dx: '18px',
+    dy: '16px',
+  },
+  {
+    x: '78%',
+    y: '32%',
+    size: '3px',
+    color: '15 100% 68%',
+    duration: '6.7s',
+    delay: '-3.2s',
+    dx: '-14px',
+    dy: '-20px',
+  },
+  {
+    x: '92%',
+    y: '22%',
+    size: '2px',
+    color: '81 82% 68%',
+    duration: '5.1s',
+    delay: '-1.4s',
+    dx: '10px',
+    dy: '20px',
+  },
+  {
+    x: '84%',
+    y: '58%',
+    size: '2px',
+    color: '184 57% 70%',
+    duration: '6.4s',
+    delay: '-4.2s',
+    dx: '-19px',
+    dy: '12px',
+  },
+  {
+    x: '8%',
+    y: '86%',
+    size: '2px',
+    color: '184 57% 70%',
+    duration: '5.7s',
+    delay: '-1.6s',
+    dx: '15px',
+    dy: '-17px',
+  },
 ];
+
+/* =========================================================
+   PROJECT TYPE
+========================================================= */
 
 type Project = {
   id: string;
@@ -60,11 +163,15 @@ type Project = {
   description: string;
   scope: string;
   accent: string;
-  icon: typeof BookOpen;
+  icon: LucideIcon;
   detail: string;
   images: string[];
   technologies: string[];
 };
+
+/* =========================================================
+   PROJECTS
+========================================================= */
 
 const projects: Project[] = [
   {
@@ -83,7 +190,13 @@ const projects: Project[] = [
       '/images/library-2.jpg',
       '/images/library-3.jpg',
     ],
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'PHP',
+      'MySQL',
+    ],
   },
   {
     id: 'campus',
@@ -101,11 +214,25 @@ const projects: Project[] = [
       '/images/campus-2.jpg',
       '/images/campus-3.jpg',
     ],
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Database'],
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'PHP',
+      'Database',
+    ],
   },
 ];
 
-const skillGroups = [
+/* =========================================================
+   SKILLS
+========================================================= */
+
+const skillGroups: {
+  title: string;
+  icon: LucideIcon;
+  skills: [string, number][];
+}[] = [
   {
     title: 'Languages & web',
     icon: Code2,
@@ -142,13 +269,25 @@ const skillGroups = [
   },
 ];
 
+/* =========================================================
+   SECTION KICKER
+========================================================= */
+
 function SectionKicker({
   children,
 }: {
   children: ReactNode;
 }) {
-  return <p className="section-kicker">{children}</p>;
+  return (
+    <p className="section-kicker">
+      {children}
+    </p>
+  );
 }
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
 
 function ProjectImage({
   src,
@@ -182,13 +321,24 @@ function ProjectImage({
   );
 }
 
+/* =========================================================
+   APP
+========================================================= */
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState('home');
+
+  const [progress, setProgress] =
+    useState(0);
+
+  const [activeSection, setActiveSection] =
+    useState('home');
+
   const [selectedProject, setSelectedProject] =
     useState<Project | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+
+  const [submitted, setSubmitted] =
+    useState(false);
 
   const [form, setForm] = useState({
     name: '',
@@ -197,25 +347,35 @@ function App() {
     message: '',
   });
 
-  const cursorRef = useRef<HTMLDivElement>(null);
+  const cursorRef =
+    useRef<HTMLDivElement>(null);
+
+  /* =======================================================
+     SCROLL / CURSOR / REVEAL
+  ======================================================= */
 
   useEffect(() => {
     const updateProgress = () => {
       const scrollable =
-        document.documentElement.scrollHeight -
+        document.documentElement
+          .scrollHeight -
         window.innerHeight;
 
       setProgress(
         scrollable > 0
           ? Math.min(
               100,
-              (window.scrollY / scrollable) * 100,
+              (window.scrollY /
+                scrollable) *
+                100,
             )
           : 0,
       );
     };
 
-    const updateCursor = (event: PointerEvent) => {
+    const updateCursor = (
+      event: PointerEvent,
+    ) => {
       if (window.innerWidth > 900) {
         cursorRef.current?.style.setProperty(
           'left',
@@ -229,41 +389,56 @@ function App() {
       }
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-      },
-    );
-
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-35% 0px -55% 0px',
-      },
-    );
-
-    document
-      .querySelectorAll<HTMLElement>('.reveal')
-      .forEach((element) => observer.observe(element));
-
-    document
-      .querySelectorAll<HTMLElement>('[data-section]')
-      .forEach((element) =>
-        sectionObserver.observe(element),
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(
+                'is-visible',
+              );
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        },
       );
+
+    const sectionObserver =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(
+                entry.target.id,
+              );
+            }
+          });
+        },
+        {
+          rootMargin:
+            '-35% 0px -55% 0px',
+        },
+      );
+
+    document
+      .querySelectorAll<HTMLElement>(
+        '.reveal',
+      )
+      .forEach((element) => {
+        observer.observe(element);
+      });
+
+    document
+      .querySelectorAll<HTMLElement>(
+        '[data-section]',
+      )
+      .forEach((element) => {
+        sectionObserver.observe(
+          element,
+        );
+      });
 
     window.addEventListener(
       'scroll',
@@ -299,6 +474,10 @@ function App() {
     };
   }, []);
 
+  /* =======================================================
+     ESCAPE MODAL
+  ======================================================= */
+
   useEffect(() => {
     const handleEscape = (
       event: globalThis.KeyboardEvent,
@@ -321,7 +500,13 @@ function App() {
     };
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  /* =======================================================
+     HELPERS
+  ======================================================= */
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   const updateForm = (
     field: keyof typeof form,
@@ -342,13 +527,26 @@ function App() {
     setSubmitted(true);
   };
 
+  /* =======================================================
+     RETURN
+  ======================================================= */
+
   return (
     <main className="portfolio-shell">
+
+      {/* ===================================================
+          CURSOR
+      =================================================== */}
+
       <div
         ref={cursorRef}
         className="cursor-aura"
         aria-hidden="true"
       />
+
+      {/* ===================================================
+          PROGRESS
+      =================================================== */}
 
       <div
         className="top-progress"
@@ -360,55 +558,81 @@ function App() {
         aria-hidden="true"
       />
 
+      {/* ===================================================
+          BACKGROUND GRID
+      =================================================== */}
+
       <div
         className="page-grid"
         aria-hidden="true"
       />
 
-      {particles.map((particle, index) => (
-        <span
-          key={index}
-          className="particle"
-          aria-hidden="true"
-          style={
-            {
-              left: particle.x,
-              top: particle.y,
-              '--size': particle.size,
-              '--particle-color':
-                particle.color,
-              '--duration': particle.duration,
-              '--delay': particle.delay,
-              '--drift-x': particle.dx,
-              '--drift-y': particle.dy,
-            } as CSSProperties
-          }
-        />
-      ))}
+      {/* ===================================================
+          PARTICLES
+      =================================================== */}
+
+      {particles.map(
+        (particle, index) => (
+          <span
+            key={index}
+            className="particle"
+            aria-hidden="true"
+            style={
+              {
+                left: particle.x,
+                top: particle.y,
+                '--size': particle.size,
+                '--particle-color':
+                  particle.color,
+                '--duration':
+                  particle.duration,
+                '--delay':
+                  particle.delay,
+                '--drift-x':
+                  particle.dx,
+                '--drift-y':
+                  particle.dy,
+              } as CSSProperties
+            }
+          />
+        ),
+      )}
+
+      {/* ===================================================
+          NAVIGATION
+      =================================================== */}
 
       <header className="site-nav">
+
         <div className="nav-inner">
+
           <a
             className="brand-mark"
             href="#home"
             onClick={closeMenu}
           >
+
             <span className="brand-box">
               KS
             </span>
 
-            <span>Kaunghtet Swan</span>
+            <span>
+              Kaunghtet Swan
+            </span>
+
           </a>
 
           <nav
             className="desktop-nav"
             aria-label="Primary navigation"
           >
+
             {navItems.map((item) => (
               <a
                 key={item.href}
                 className={`nav-link ${
-                  activeSection === item.href.slice(1)
+                  activeSection ===
+                  item.href.slice(1)
                     ? 'is-active'
                     : ''
                 }`}
@@ -417,11 +641,15 @@ function App() {
                 {item.label}
               </a>
             ))}
+
           </nav>
 
           <div className="nav-status">
+
             <span className="status-dot" />
+
             Available for internship
+
           </div>
 
           <button
@@ -439,26 +667,33 @@ function App() {
               )
             }
           >
+
             {menuOpen ? (
               <X size={19} />
             ) : (
               <Menu size={19} />
             )}
+
           </button>
+
         </div>
 
         <nav
           className={`mobile-nav ${
-            menuOpen ? 'is-open' : ''
+            menuOpen
+              ? 'is-open'
+              : ''
           }`}
         >
+
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={closeMenu}
               className={
-                activeSection === item.href.slice(1)
+                activeSection ===
+                item.href.slice(1)
                   ? 'is-active'
                   : ''
               }
@@ -466,22 +701,32 @@ function App() {
               {item.label}
             </a>
           ))}
+
         </nav>
+
       </header>
 
       <div className="content-wrap">
 
-        {/* HERO */}
+        {/* =================================================
+            HERO
+        ================================================= */}
+
         <section
           id="home"
           data-section
           className="hero"
         >
+
+          {/* HERO COPY */}
+
           <div className="hero-copy-block">
+
             <div className="reveal">
+
               <p className="eyebrow">
-                KAUNGHTET SWAN / UCSM / 5TH YEAR /
-                SOFTWARE ENGINEERING
+                KAUNGHTET SWAN / UCSM / 5TH
+                YEAR / SOFTWARE ENGINEERING
               </p>
 
               <p className="hero-role">
@@ -493,36 +738,49 @@ function App() {
               </p>
 
               <h1 className="hero-title">
+
                 Build
+
                 <span className="outline">
                   with
                 </span>
+
                 <span className="accent">
                   intent.
                 </span>
+
               </h1>
 
               <p className="hero-copy">
+
                 I&apos;m{' '}
+
                 <strong>
                   Kaunghtet Swan
                 </strong>{' '}
-                — a Computer Science student
-                specializing in Software
-                Engineering, building useful
-                software through curiosity,
-                practice, and problem solving.
+
+                — a Computer Science
+                student specializing in
+                Software Engineering,
+                building useful software
+                through curiosity, practice,
+                and problem solving.
+
               </p>
 
               <div className="hero-actions">
+
                 <a
                   className="button-primary"
                   href="#projects"
                 >
+
                   See the work
+
                   <ArrowDownRight
                     size={16}
                   />
+
                 </a>
 
                 <a
@@ -530,12 +788,17 @@ function App() {
                   href="/Kaunghtetswan-cv.pdf"
                   download="Kaunghtetswan-cv.pdf"
                 >
+
                   Download CV
+
                   <Download size={15} />
+
                 </a>
+
               </div>
 
               <div className="hero-meta">
+
                 <span>
                   Software Developer
                 </span>
@@ -545,235 +808,450 @@ function App() {
                 <span>
                   Software Engineering
                 </span>
+
               </div>
+
             </div>
+
           </div>
+
+          {/* =================================================
+              HERO VISUAL
+          ================================================= */}
 
           <div
             className="hero-visual reveal reveal-delay-2"
-            aria-hidden="true"
           >
-            <div className="hero-glow" />
 
-            <div className="orbit">
+            <div
+              className="hero-glow"
+              aria-hidden="true"
+            />
+
+            <div
+              className="orbit"
+              aria-hidden="true"
+            >
+
               <div className="orbit-inner" />
+
             </div>
+
+            {/* TOP FLOATING LABEL */}
 
             <div className="floating-label floating-top">
+
               <span className="status-dot" />
+
               learning in public
+
             </div>
+
+            {/* BOTTOM FLOATING LABEL */}
 
             <div className="floating-label floating-bottom">
+
               <Terminal size={13} />
+
               solve / test / repeat
+
             </div>
 
-            <div className="code-float">
-              <div className="code-topbar">
-                <div className="window-dots">
-                  <span />
-                  <span />
-                  <span />
+            {/* =================================================
+                CREATIVE PROFILE PHOTO
+            ================================================= */}
+
+            <div className="profile-photo-float">
+
+              {/* Glow */}
+
+              <div
+                className="profile-photo-glow"
+                aria-hidden="true"
+              />
+
+              {/* Outer rotating rings */}
+
+              <div
+                className="profile-photo-ring profile-ring-1"
+                aria-hidden="true"
+              />
+
+              <div
+                className="profile-photo-ring profile-ring-2"
+                aria-hidden="true"
+              />
+
+              {/* Photo card */}
+
+              <div className="profile-photo-card">
+
+                <div className="profile-photo-frame">
+
+                  <img
+                    src="/images/kaunghtet-swan.jpg"
+                    alt="Kaunghtet Swan"
+                    className="profile-photo"
+                  />
+
+                  <div
+                    className="profile-photo-shine"
+                    aria-hidden="true"
+                  />
+
+                  <div
+                    className="profile-photo-corner corner-tl"
+                    aria-hidden="true"
+                  />
+
+                  <div
+                    className="profile-photo-corner corner-tr"
+                    aria-hidden="true"
+                  />
+
+                  <div
+                    className="profile-photo-corner corner-bl"
+                    aria-hidden="true"
+                  />
+
+                  <div
+                    className="profile-photo-corner corner-br"
+                    aria-hidden="true"
+                  />
+
                 </div>
 
-                <span>
-                  kaunghtet_swan.ts
+                <div className="profile-photo-info">
+
+                  <div>
+
+                    <span className="profile-photo-label">
+                      PROFILE / 01
+                    </span>
+
+                    <strong>
+                      Kaunghtet Swan
+                    </strong>
+
+                  </div>
+
+                  <span className="profile-photo-status">
+
+                    <span className="status-dot" />
+
+                    ONLINE
+
+                  </span>
+
+                </div>
+
+              </div>
+
+              {/* Floating photo badge */}
+
+              <div className="photo-floating-badge photo-badge-top">
+
+                <span className="status-dot" />
+
+                SOFTWARE ENGINEER
+
+              </div>
+
+              <div className="photo-floating-badge photo-badge-bottom">
+
+                <Terminal size={13} />
+
+                KEEP BUILDING
+
+              </div>
+
+            </div>
+
+            {/* =================================================
+                ORIGINAL DEVELOPER CODE WINDOW
+            ================================================= */}
+
+            <div className="code-float">
+
+              <div className="code-float-header">
+
+                <div className="code-dots">
+
+                  <span />
+                  <span />
+                  <span />
+
+                </div>
+
+                <span className="code-file">
+                  kaunghtet_swan.ts05
                 </span>
 
-                <span>05</span>
+                <span className="code-status">
+                  ●
+                </span>
+
               </div>
 
               <div className="code-body">
+
                 <div>
-                  <span className="line-number">
-                    01
-                  </span>
 
                   <span className="code-keyword">
                     const
                   </span>{' '}
 
-                  <span className="code-name">
+                  <span className="code-variable">
                     developer
                   </span>{' '}
-                  = {'{'}
-                </div>
 
-                <div>
-                  <span className="line-number">
-                    02
+                  <span className="code-symbol">
+                    =
+                  </span>{' '}
+
+                  <span className="code-bracket">
+                    {'{'}
                   </span>
 
-                  name:{' '}
+                </div>
+
+                <div className="code-indent">
+
+                  <span className="code-property">
+                    name:
+                  </span>{' '}
 
                   <span className="code-string">
                     &quot;Kaunghtet Swan&quot;
                   </span>
-                  ,
-                </div>
 
-                <div>
-                  <span className="line-number">
-                    03
+                  <span className="code-symbol">
+                    ,
                   </span>
 
-                  focus: [
+                </div>
+
+                <div className="code-indent">
+
+                  <span className="code-property">
+                    focus:
+                  </span>{' '}
+
+                  <span className="code-bracket">
+                    [
+                  </span>
 
                   <span className="code-string">
                     &quot;software engineering&quot;
                   </span>
-                  ,{' '}
+
+                  <span className="code-symbol">
+                    ,
+                  </span>{' '}
 
                   <span className="code-string">
                     &quot;systems&quot;
                   </span>
-                  ],
-                </div>
 
-                <div>
-                  <span className="line-number">
-                    04
+                  <span className="code-bracket">
+                    ]
                   </span>
 
-                  degree:{' '}
+                  <span className="code-symbol">
+                    ,
+                  </span>
+
+                </div>
+
+                <div className="code-indent">
+
+                  <span className="code-property">
+                    degree:
+                  </span>{' '}
 
                   <span className="code-string">
                     &quot;Computer Science&quot;
                   </span>
-                  ,
-                </div>
 
-                <div>
-                  <span className="line-number">
-                    05
+                  <span className="code-symbol">
+                    ,
                   </span>
 
-                  year:{' '}
+                </div>
+
+                <div className="code-indent">
+
+                  <span className="code-property">
+                    year:
+                  </span>{' '}
 
                   <span className="code-number">
                     5
                   </span>
-                  ,
-                </div>
 
-                <div>
-                  <span className="line-number">
-                    06
+                  <span className="code-symbol">
+                    ,
                   </span>
 
-                  mode:{' '}
+                </div>
+
+                <div className="code-indent">
+
+                  <span className="code-property">
+                    mode:
+                  </span>{' '}
 
                   <span className="code-string">
                     &quot;keep building&quot;
                   </span>
-                  ,
+
+                  <span className="code-symbol">
+                    ,
+                  </span>
+
                 </div>
 
                 <div>
-                  <span className="line-number">
-                    07
+
+                  <span className="code-bracket">
+                    {'}'}
                   </span>
 
-                  {'}'}
                 </div>
 
-                <div>
-                  <span className="line-number">
-                    08
-                  </span>
-
-                  <span className="code-comment">
-                    // every problem is a door
-                  </span>
+                <div className="code-comment">
+                  // every problem is a door
                 </div>
+
               </div>
+
             </div>
+
           </div>
 
           <a
             className="scroll-cue"
             href="#about"
           >
+
             Scroll to explore
+
             <ArrowDown size={14} />
+
           </a>
+
         </section>
 
-        {/* ABOUT */}
+        {/* =================================================
+            ABOUT
+        ================================================= */}
+
         <section
           id="about"
           data-section
           className="section about-section"
         >
+
           <div className="manifesto reveal">
+
             <div className="manifesto-mark">
               01
             </div>
 
             <p className="manifesto-quote">
+
               Good software starts with a{' '}
-              <em>better question.</em>
+
+              <em>
+                better question.
+              </em>
+
             </p>
 
             <p className="manifesto-note">
+
               I&apos;m studying Computer Science
               with a focus on{' '}
+
               <strong>
                 Software Engineering
               </strong>{' '}
+
               at the{' '}
+
               <a
                 href="https://www.ucsm.edu.mm/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="university-link"
               >
+
                 <strong>
                   University of Computer Studies,
                   Mandalay
                 </strong>
+
               </a>{' '}
+
               and using every project to get
               closer to the kind of developer
               who listens before building.
+
             </p>
+
           </div>
+
         </section>
 
-        {/* PROJECTS */}
+        {/* =================================================
+            PROJECTS
+        ================================================= */}
+
         <section
           id="projects"
           data-section
           className="section"
         >
+
           <div className="section-header reveal">
+
             <div>
+
               <SectionKicker>
                 Selected work / 02 systems
               </SectionKicker>
 
               <h2 className="section-title">
+
                 Things I&apos;ve
                 <br />
                 made useful.
+
               </h2>
+
             </div>
 
             <p className="section-intro">
+
               Two academic builds, each
-              starting with an everyday problem
-              and ending with a clearer way
-              through it.
+              starting with an everyday
+              problem and ending with a
+              clearer way through it.
+
             </p>
+
           </div>
 
           <div className="project-grid">
+
             {projects.map(
               (project, index) => {
-                const Icon = project.icon;
+
+                const Icon =
+                  project.icon;
 
                 return (
+
                   <article
                     key={project.id}
                     className={`project-card reveal reveal-delay-${
@@ -795,18 +1273,33 @@ function App() {
                     onKeyDown={(
                       event: KeyboardEvent<HTMLElement>,
                     ) => {
+
                       if (
-                        event.key === 'Enter' ||
+                        event.key ===
+                          'Enter' ||
                         event.key === ' '
                       ) {
+
                         event.preventDefault();
 
                         setSelectedProject(
                           project,
                         );
+
                       }
+
                     }}
-                    onMouseMove={(event) => {
+                    onMouseMove={(
+                      event,
+                    ) => {
+
+                      if (
+                        window.innerWidth <=
+                        900
+                      ) {
+                        return;
+                      }
+
                       const rect =
                         event.currentTarget.getBoundingClientRect();
 
@@ -833,8 +1326,12 @@ function App() {
                         '--tilt-y',
                         `${tiltY}deg`,
                       );
+
                     }}
-                    onMouseLeave={(event) => {
+                    onMouseLeave={(
+                      event,
+                    ) => {
+
                       event.currentTarget.style.setProperty(
                         '--tilt-x',
                         '0deg',
@@ -844,25 +1341,33 @@ function App() {
                         '--tilt-y',
                         '0deg',
                       );
+
                     }}
                   >
+
                     <div className="project-card-glow" />
 
                     <div className="project-card-top">
+
                       <span className="project-number">
                         {project.number}
                       </span>
 
                       <div className="project-icon">
+
                         <Icon
                           size={22}
                           strokeWidth={1.7}
                         />
+
                       </div>
+
                     </div>
 
                     <div className="project-image-stack">
+
                       <div className="project-main-image">
+
                         <ProjectImage
                           src={
                             project.images[0]
@@ -870,10 +1375,13 @@ function App() {
                           alt={`${project.title} screenshot 1`}
                           index={0}
                         />
+
                       </div>
 
                       <div className="project-side-images">
+
                         <div>
+
                           <ProjectImage
                             src={
                               project.images[1]
@@ -881,9 +1389,11 @@ function App() {
                             alt={`${project.title} screenshot 2`}
                             index={1}
                           />
+
                         </div>
 
                         <div>
+
                           <ProjectImage
                             src={
                               project.images[2]
@@ -891,11 +1401,15 @@ function App() {
                             alt={`${project.title} screenshot 3`}
                             index={2}
                           />
+
                         </div>
+
                       </div>
+
                     </div>
 
                     <div className="project-content">
+
                       <div className="project-scope">
                         {project.scope}
                       </div>
@@ -909,108 +1423,160 @@ function App() {
                       </p>
 
                       <div className="technology-row">
+
                         {project.technologies.map(
-                          (technology) => (
+                          (
+                            technology,
+                          ) => (
+
                             <span
-                              key={technology}
+                              key={
+                                technology
+                              }
                             >
                               {technology}
                             </span>
+
                           ),
                         )}
+
                       </div>
+
                     </div>
 
                     <div className="project-footer">
+
                       <span>
                         View project details
                       </span>
 
                       <span className="project-arrow">
+
                         <ArrowUpRight
                           size={16}
                         />
+
                       </span>
+
                     </div>
+
                   </article>
+
                 );
               },
             )}
+
           </div>
+
         </section>
 
-        {/* SKILLS */}
+        {/* =================================================
+            SKILLS
+        ================================================= */}
+
         <section
           id="skills"
           data-section
           className="section"
         >
+
           <div className="section-header reveal">
+
             <div>
+
               <SectionKicker>
                 Toolkit / always learning
               </SectionKicker>
 
               <h2 className="section-title">
+
                 A stack with
                 <br />
                 room to grow.
+
               </h2>
+
             </div>
 
             <p className="section-intro">
+
               The languages, platforms,
-              databases, and tools I use to move
-              an idea from a blank screen toward
-              something real.
+              databases, and tools I use to
+              move an idea from a blank
+              screen toward something real.
+
             </p>
+
           </div>
 
           <div className="skill-layout">
+
             <div className="skill-rail reveal">
+
               <div className="skill-big-number">
                 03
               </div>
 
               <p className="skill-statement">
+
                 Curious by default.
                 <br />
+
                 <span>
                   Precise by practice.
                 </span>
+
               </p>
 
               <p className="skill-subcopy">
-                Progress is not a badge. It&apos;s
-                the small, repeated act of opening
-                the editor and asking what could be
-                clearer.
+
+                Progress is not a badge.
+                It&apos;s the small, repeated act
+                of opening the editor and
+                asking what could be clearer.
+
               </p>
+
             </div>
 
             <div className="skill-groups reveal reveal-delay-1">
+
               {skillGroups.map(
                 (group) => {
-                  const Icon = group.icon;
+
+                  const Icon =
+                    group.icon;
 
                   return (
+
                     <div
                       className="skill-group"
                       key={group.title}
                     >
+
                       <h3 className="skill-group-title">
+
                         <Icon size={15} />
+
                         {group.title}
+
                       </h3>
 
                       <div className="skill-list">
+
                         {group.skills.map(
-                          ([name, skill]) => (
+                          ([
+                            name,
+                            skill,
+                          ]) => (
+
                             <div
                               className="skill-row"
                               key={name}
                             >
+
                               <div className="skill-row-top">
+
                                 <span className="skill-name">
                                   {name}
                                 </span>
@@ -1018,49 +1584,72 @@ function App() {
                                 <span className="skill-percent">
                                   {skill}%
                                 </span>
+
                               </div>
 
                               <div className="skill-track">
+
                                 <div
                                   className="skill-fill"
                                   style={
                                     {
-                                      '--skill':
-                                        `${skill}%`,
+                                      '--skill': `${skill}%`,
                                     } as CSSProperties
                                   }
                                 />
+
                               </div>
+
                             </div>
+
                           ),
                         )}
+
                       </div>
+
                     </div>
+
                   );
+
                 },
               )}
+
             </div>
+
           </div>
+
         </section>
 
-        {/* JOURNEY */}
+        {/* =================================================
+            JOURNEY
+        ================================================= */}
+
         <section className="section">
+
           <div className="section-header reveal">
+
             <div>
+
               <SectionKicker>
                 Context / beyond the code
               </SectionKicker>
 
               <h2 className="section-title">
+
                 Still becoming
                 <br />
                 the developer.
+
               </h2>
+
             </div>
+
           </div>
 
           <div className="journey">
+
             <article className="journey-card reveal">
+
               <div className="journey-icon">
                 <Github size={19} />
               </div>
@@ -1075,10 +1664,13 @@ function App() {
               </h3>
 
               <p>
-                GitHub is where I keep the trail
-                visible — a place to practice,
-                revisit decisions, and learn
-                through the work itself.
+
+                GitHub is where I keep the
+                trail visible — a place to
+                practice, revisit decisions,
+                and learn through the work
+                itself.
+
               </p>
 
               <a
@@ -1087,12 +1679,17 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
+
                 Visit GitHub
+
                 <Github size={15} />
+
               </a>
+
             </article>
 
             <article className="journey-card journey-card-accent reveal reveal-delay-1">
+
               <div className="journey-icon">
                 <Terminal size={19} />
               </div>
@@ -1102,35 +1699,50 @@ function App() {
               </span>
 
               <h3>
+
                 Ready for an internship with
                 real problems.
+
               </h3>
 
               <p>
+
                 Looking for a team where
                 thoughtful questions, steady
-                practice, and useful software are
-                valued.
+                practice, and useful software
+                are valued.
+
               </p>
 
               <a
                 className="button-primary"
                 href="#contact"
               >
+
                 Start a conversation
+
                 <ChevronRight size={15} />
+
               </a>
+
             </article>
+
           </div>
+
         </section>
 
-        {/* EDUCATION */}
+        {/* =================================================
+            EDUCATION
+        ================================================= */}
+
         <section
           id="education"
           data-section
           className="section"
         >
+
           <div className="education-panel reveal">
+
             <div className="education-index">
               04
             </div>
@@ -1140,24 +1752,31 @@ function App() {
             </div>
 
             <div className="education-main">
+
               <p className="education-label">
                 Education / current chapter
               </p>
 
               <h2 className="education-title">
+
                 <a
                   href="https://www.ucsm.edu.mm/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="university-link"
                 >
-                  University of Computer Studies,
-                  Mandalay
+
+                  University of Computer
+                  Studies, Mandalay
+
                 </a>
+
               </h2>
+
             </div>
 
             <div className="education-meta">
+
               <strong>
                 Bachelor of Computer Science
               </strong>
@@ -1169,163 +1788,268 @@ function App() {
               <span>
                 5th Year Student
               </span>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* CONTACT */}
+        {/* =================================================
+            CONTACT
+        ================================================= */}
+
         <section
           id="contact"
           data-section
           className="section contact-section"
         >
+
           <div className="contact-layout">
+
             <div className="contact-copy-block reveal">
+
               <SectionKicker>
                 Contact / say hello
               </SectionKicker>
 
               <h2 className="contact-title">
+
                 Let&apos;s make
                 <br />
-                <span>something</span>
+
+                <span>
+                  something
+                </span>
+
                 <br />
+
                 useful.
+
               </h2>
 
               <p className="contact-copy">
-                If you&apos;re looking for an intern
-                who brings curiosity, patience, and
-                a growing systems mindset, I&apos;d
-                like to hear what you&apos;re working
-                on.
+
+                If you&apos;re looking for an
+                intern who brings curiosity,
+                patience, and a growing
+                systems mindset, I&apos;d like to
+                hear what you&apos;re working on.
+
               </p>
 
               <div className="contact-detail">
+
                 <Send size={15} />
-                Open to thoughtful introductions
+
+                Open to thoughtful
+                introductions
+
               </div>
 
               <a
                 className="contact-email"
                 href="mailto:kaunghtetswan200425@gmail.com"
               >
+
                 kaunghtetswan200425@gmail.com
+
                 <ArrowUpRight size={15} />
+
               </a>
+
             </div>
-          <form
-            className="contact-form contact-form-modern reveal reveal-delay-1"
-            onSubmit={handleSubmit}
-          >
-            <div className="modern-form-top">
-              <div>
-                <span className="form-kicker">CONTACT</span>
-                <h3>Let’s build something.</h3>
-                <p>
-                  Have an idea, opportunity, or question? Drop me a message.
-                </p>
+
+            <form
+              className="contact-form contact-form-modern reveal reveal-delay-1"
+              onSubmit={handleSubmit}
+            >
+
+              <div className="modern-form-top">
+
+                <div>
+
+                  <span className="form-kicker">
+                    CONTACT
+                  </span>
+
+                  <h3>
+                    Let&apos;s build something.
+                  </h3>
+
+                  <p>
+                    Have an idea, opportunity,
+                    or question? Drop me a
+                    message.
+                  </p>
+
+                </div>
+
+                <div className="form-number">
+                  01
+                </div>
+
               </div>
 
-              <div className="form-number">01</div>
-            </div>
+              <div className="modern-form-line" />
 
-            <div className="modern-form-line" />
+              <div className="form-row">
 
-            <div className="form-row">
+                <div className="form-field modern-field">
+
+                  <label htmlFor="contact-name">
+                    NAME
+                  </label>
+
+                  <input
+                    id="contact-name"
+                    value={form.name}
+                    onChange={(event) =>
+                      updateForm(
+                        'name',
+                        event.target.value,
+                      )
+                    }
+                    placeholder="Your name"
+                    required
+                  />
+
+                </div>
+
+                <div className="form-field modern-field">
+
+                  <label htmlFor="contact-email">
+                    EMAIL
+                  </label>
+
+                  <input
+                    id="contact-email"
+                    type="email"
+                    value={form.email}
+                    onChange={(event) =>
+                      updateForm(
+                        'email',
+                        event.target.value,
+                      )
+                    }
+                    placeholder="you@example.com"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
               <div className="form-field modern-field">
-                <label htmlFor="contact-name">NAME</label>
+
+                <label htmlFor="contact-subject">
+                  SUBJECT
+                </label>
 
                 <input
-                  id="contact-name"
-                  value={form.name}
+                  id="contact-subject"
+                  value={form.subject}
                   onChange={(event) =>
-                    updateForm('name', event.target.value)
+                    updateForm(
+                      'subject',
+                      event.target.value,
+                    )
                   }
-                  placeholder="Your name"
+                  placeholder="What can I help you with?"
                   required
                 />
+
               </div>
 
               <div className="form-field modern-field">
-                <label htmlFor="contact-email">EMAIL</label>
 
-                <input
-                  id="contact-email"
-                  type="email"
-                  value={form.email}
+                <label htmlFor="contact-message">
+                  MESSAGE
+                </label>
+
+                <textarea
+                  id="contact-message"
+                  value={form.message}
                   onChange={(event) =>
-                    updateForm('email', event.target.value)
+                    updateForm(
+                      'message',
+                      event.target.value,
+                    )
                   }
-                  placeholder="you@example.com"
+                  placeholder="Tell me about your project..."
                   required
                 />
+
               </div>
-            </div>
 
-            <div className="form-field modern-field">
-              <label htmlFor="contact-subject">SUBJECT</label>
+              <div className="modern-form-bottom">
 
-              <input
-                id="contact-subject"
-                value={form.subject}
-                onChange={(event) =>
-                  updateForm('subject', event.target.value)
-                }
-                placeholder="What can I help you with?"
-                required
-              />
-            </div>
+                <span className="form-hint">
 
-            <div className="form-field modern-field">
-              <label htmlFor="contact-message">MESSAGE</label>
+                  I usually reply within 24–48
+                  hours.
 
-              <textarea
-                id="contact-message"
-                value={form.message}
-                onChange={(event) =>
-                  updateForm('message', event.target.value)
-                }
-                placeholder="Tell me about your project..."
-                required
-              />
-            </div>
-
-            <div className="modern-form-bottom">
-              <span className="form-hint">
-                I usually reply within 24–48 hours.
-              </span>
-
-              <button
-                className="modern-send-button"
-                type="submit"
-              >
-                <span>Send message</span>
-
-                <span className="modern-send-icon">
-                  <ArrowUpRight size={18} />
-                </span>
-              </button>
-            </div>
-
-            {submitted && (
-              <div className="success-note modern-success">
-                <span className="success-check">
-                  <Check size={15} />
                 </span>
 
-                Thanks, {form.name || 'there'} — your message is ready for a reply.
+                <button
+                  className="modern-send-button"
+                  type="submit"
+                >
+
+                  <span>
+                    Send message
+                  </span>
+
+                  <span className="modern-send-icon">
+
+                    <ArrowUpRight
+                      size={18}
+                    />
+
+                  </span>
+
+                </button>
+
               </div>
-            )}
-          </form>
+
+              {submitted && (
+
+                <div className="success-note modern-success">
+
+                  <span className="success-check">
+
+                    <Check size={15} />
+
+                  </span>
+
+                  Thanks,{' '}
+                  {form.name ||
+                    'there'}{' '}
+                  — your message is ready
+                  for a reply.
+
+                </div>
+
+              )}
+
+            </form>
+
           </div>
+
         </section>
 
-        {/* FOOTER */}
+        {/* =================================================
+            FOOTER
+        ================================================= */}
+
         <footer className="footer">
+
           <div className="footer-main">
+
             <div>
+
               <div className="footer-brand">
+
                 <span className="brand-box">
                   KS
                 </span>
@@ -1333,23 +2057,31 @@ function App() {
                 <span>
                   Kaunghtet Swan
                 </span>
+
               </div>
 
               <p>
-                Software Developer · Computer
-                Science Student · Software
-                Engineering
+
+                Software Developer ·
+                Computer Science Student ·
+                Software Engineering
+
               </p>
+
             </div>
 
             <div className="footer-links">
+
               <a
                 href="https://github.com/kokoaung579"
                 target="_blank"
                 rel="noreferrer"
               >
+
                 <Github size={14} />
+
                 GitHub
+
               </a>
 
               <a
@@ -1357,8 +2089,11 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
+
                 <Linkedin size={14} />
+
                 LinkedIn
+
               </a>
 
               <a
@@ -1366,24 +2101,38 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
+
                 <Facebook size={14} />
+
                 Facebook
+
               </a>
 
-              <a href="mailto:kaunghtetswan200425@gmail.com">
+              <a
+                href="mailto:kaunghtetswan200425@gmail.com"
+              >
+
                 <Mail size={14} />
+
                 Email
+
               </a>
+
             </div>
+
           </div>
 
           <div className="footer-bottom">
+
             <span>
+
               © 2026 Kaunghtet Swan. All rights
               reserved.
+
             </span>
 
             <a href="#home">
+
               Back to top
 
               <ArrowDown
@@ -1393,19 +2142,28 @@ function App() {
                     'rotate(180deg)',
                 }}
               />
+
             </a>
+
           </div>
+
         </footer>
+
       </div>
 
-      {/* PROJECT MODAL */}
+      {/* =================================================
+          PROJECT MODAL
+      ================================================= */}
+
       {selectedProject && (
+
         <div
           className="modal-backdrop"
           onClick={() =>
             setSelectedProject(null)
           }
         >
+
           <div
             className="project-modal"
             role="dialog"
@@ -1415,6 +2173,7 @@ function App() {
               event.stopPropagation()
             }
           >
+
             <button
               className="modal-close"
               type="button"
@@ -1423,42 +2182,64 @@ function App() {
                 setSelectedProject(null)
               }
             >
+
               <X size={17} />
+
             </button>
 
             <span className="modal-kicker">
+
               Project brief /{' '}
+
               {selectedProject.number}
+
             </span>
 
             <h2
               className="modal-title"
               id="project-modal-title"
             >
+
               {selectedProject.title}
+
             </h2>
 
             <p className="modal-copy">
+
               {selectedProject.detail}
+
             </p>
 
             <div className="modal-tech">
+
               {selectedProject.technologies.map(
                 (technology) => (
-                  <span key={technology}>
+
+                  <span
+                    key={technology}
+                  >
                     {technology}
                   </span>
+
                 ),
               )}
+
             </div>
 
             <p className="modal-hint">
+
               Academic project ·{' '}
+
               {selectedProject.scope}
+
             </p>
+
           </div>
+
         </div>
+
       )}
+
     </main>
   );
 }

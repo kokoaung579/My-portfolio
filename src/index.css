@@ -3033,6 +3033,590 @@ button {
     padding: 30px 22px;
   }
 }
+/* =========================================================
+   KAUNGHTET SWAN — HERO PROFILE PHOTO
+   Only affects the new profile photo
+========================================================= */
+
+.profile-photo-float {
+  position: relative;
+  z-index: 5;
+
+  width: min(520px, 92%);
+  height: 560px;
+
+  display: grid;
+  place-items: center;
+
+  perspective: 1200px;
+
+  animation: profileFloat 6s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================================================
+   PHOTO GLOW
+========================================================= */
+
+.profile-photo-glow {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(115, 231, 237, 0.22),
+      rgba(115, 231, 237, 0.08) 38%,
+      transparent 70%
+    );
+
+  filter: blur(22px);
+
+  animation: profileGlow 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+@keyframes profileGlow {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   OUTER ORBIT RINGS
+========================================================= */
+
+.profile-photo-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.profile-ring-1 {
+  width: 455px;
+  height: 455px;
+
+  border: 1px solid
+    rgba(115, 231, 237, 0.15);
+
+  animation:
+    profileRingRotate 18s linear infinite;
+}
+
+.profile-ring-1::before,
+.profile-ring-1::after {
+  content: '';
+
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  box-shadow:
+    0 0 12px var(--cyan),
+    0 0 30px rgba(115, 231, 237, 0.5);
+}
+
+.profile-ring-1::before {
+  top: 25px;
+  left: 90px;
+}
+
+.profile-ring-1::after {
+  right: 55px;
+  bottom: 75px;
+
+  background: var(--orange);
+
+  box-shadow:
+    0 0 12px var(--orange),
+    0 0 30px rgba(255, 152, 102, 0.45);
+}
+
+@keyframes profileRingRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profile-ring-2 {
+  width: 380px;
+  height: 380px;
+
+  border: 1px dashed
+    rgba(255, 255, 255, 0.1);
+
+  animation:
+    profileRingReverse 24s linear infinite;
+}
+
+@keyframes profileRingReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-photo-card {
+  position: relative;
+  z-index: 10;
+
+  width: 335px;
+
+  padding: 12px;
+
+  border: 1px solid
+    rgba(115, 231, 237, 0.22);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 28, 38, 0.9),
+      rgba(7, 11, 16, 0.97)
+    );
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.55),
+    0 0 70px rgba(115, 231, 237, 0.08),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transform:
+    perspective(1200px)
+    rotateY(-7deg)
+    rotateX(3deg);
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.profile-photo-card:hover {
+  transform:
+    perspective(1200px)
+    rotateY(0deg)
+    rotateX(0deg)
+    translateY(-8px)
+    scale(1.025);
+
+  border-color:
+    rgba(115, 231, 237, 0.5);
+
+  box-shadow:
+    0 50px 120px rgba(0, 0, 0, 0.6),
+    0 0 90px rgba(115, 231, 237, 0.15),
+    inset 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
+
+.profile-photo-frame {
+  position: relative;
+
+  width: 100%;
+  height: 410px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(115, 231, 237, 0.08),
+      rgba(168, 140, 255, 0.04)
+    );
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter:
+    saturate(0.92)
+    contrast(1.08)
+    brightness(0.96);
+
+  transition:
+    transform 0.8s
+      cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.6s ease;
+}
+
+.profile-photo-card:hover
+.profile-photo {
+  transform: scale(1.07);
+
+  filter:
+    saturate(1.05)
+    contrast(1.08)
+    brightness(1);
+}
+
+/* =========================================================
+   PHOTO SHINE
+========================================================= */
+
+.profile-photo-shine {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.18) 45%,
+      transparent 65%
+    );
+
+  transform: translateX(-120%);
+
+  transition:
+    transform 0.9s ease;
+}
+
+.profile-photo-card:hover
+.profile-photo-shine {
+  transform: translateX(120%);
+}
+
+/* =========================================================
+   FUTURISTIC CORNERS
+========================================================= */
+
+.profile-photo-corner {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  pointer-events: none;
+
+  transition:
+    width 0.4s ease,
+    height 0.4s ease;
+}
+
+.corner-tl {
+  top: 10px;
+  left: 10px;
+
+  border-top: 1px solid var(--cyan);
+  border-left: 1px solid var(--cyan);
+}
+
+.corner-tr {
+  top: 10px;
+  right: 10px;
+
+  border-top: 1px solid var(--cyan);
+  border-right: 1px solid var(--cyan);
+}
+
+.corner-bl {
+  bottom: 10px;
+  left: 10px;
+
+  border-bottom: 1px solid var(--orange);
+  border-left: 1px solid var(--orange);
+}
+
+.corner-br {
+  right: 10px;
+  bottom: 10px;
+
+  border-bottom: 1px solid var(--orange);
+  border-right: 1px solid var(--orange);
+}
+
+.profile-photo-card:hover
+.profile-photo-corner {
+  width: 32px;
+  height: 32px;
+}
+
+/* =========================================================
+   PROFILE INFO
+========================================================= */
+
+.profile-photo-info {
+  min-height: 62px;
+
+  padding: 13px 5px 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.profile-photo-info > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.profile-photo-label {
+  color: var(--cyan);
+
+  font-family: 'DM Mono', monospace;
+  font-size: 7px;
+
+  letter-spacing: 0.14em;
+}
+
+.profile-photo-info strong {
+  color: white;
+
+  font-size: 13px;
+
+  letter-spacing: -0.01em;
+}
+
+.profile-photo-status {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--muted-2);
+
+  font-family: 'DM Mono', monospace;
+  font-size: 7px;
+
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   FLOATING BADGES
+========================================================= */
+
+.photo-floating-badge {
+  position: absolute;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 13px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(8, 12, 17, 0.78);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: var(--muted);
+
+  font-family: 'DM Mono', monospace;
+  font-size: 7px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3);
+
+  animation:
+    photoBadgeFloat 4s ease-in-out infinite;
+}
+
+.photo-badge-top {
+  top: 72px;
+  right: -5px;
+
+  color: var(--cyan);
+
+  border-color:
+    rgba(115, 231, 237, 0.2);
+}
+
+.photo-badge-bottom {
+  bottom: 78px;
+  left: -5px;
+
+  color: var(--orange);
+
+  border-color:
+    rgba(255, 152, 102, 0.2);
+
+  animation-delay: -2s;
+}
+
+@keyframes photoBadgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .profile-photo-float {
+    width: 100%;
+    height: 500px;
+  }
+
+  .profile-photo-card {
+    width: 300px;
+  }
+
+  .profile-photo-frame {
+    height: 365px;
+  }
+
+  .profile-ring-1 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .profile-ring-2 {
+    width: 345px;
+    height: 345px;
+  }
+
+  .profile-photo-glow {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 520px) {
+  .profile-photo-float {
+    height: 420px;
+  }
+
+  .profile-photo-card {
+    width: 255px;
+    padding: 9px;
+  }
+
+  .profile-photo-frame {
+    height: 310px;
+  }
+
+  .profile-ring-1 {
+    width: 325px;
+    height: 325px;
+  }
+
+  .profile-ring-2 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .profile-photo-glow {
+    width: 290px;
+    height: 290px;
+  }
+
+  .photo-floating-badge {
+    padding: 8px 9px;
+    font-size: 6px;
+  }
+
+  .photo-badge-top {
+    top: 20px;
+    right: 0;
+  }
+
+  .photo-badge-bottom {
+    bottom: 20px;
+    left: 0;
+  }
+
+  .profile-photo-info {
+    min-height: 48px;
+  }
+
+  .profile-photo-info strong {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-photo-float,
+  .profile-photo-glow,
+  .profile-photo-ring,
+  .photo-floating-badge {
+    animation: none !important;
+  }
+}
 
 /* =========================================================
    REDUCE MOTION
