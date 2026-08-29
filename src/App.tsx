@@ -1,3 +1,4 @@
+
 import {
   useEffect,
   useRef,
@@ -340,6 +341,9 @@ function App() {
   const [submitted, setSubmitted] =
     useState(false);
 
+  const [sending, setSending] =
+    useState(false);
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -520,11 +524,81 @@ function App() {
     }));
   };
 
-  const handleSubmit = (
+  /* =======================================================
+     WEB3FORMS CONTACT SUBMIT
+  ======================================================= */
+
+  const handleSubmit = async (
     event: FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
-    setSubmitted(true);
+
+    if (sending) {
+      return;
+    }
+
+    setSubmitted(false);
+    setSending(true);
+
+    try {
+      const response = await fetch(
+        'https://api.web3forms.com/submit',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type':
+              'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key:
+              'b13e720d-47c5-4d2a-923e-71888204a9ea',
+
+            name: form.name,
+
+            email: form.email,
+
+            subject: form.subject,
+
+            message: form.message,
+
+            from_name:
+              'Kaunghtet Swan Portfolio',
+
+            replyto: form.email,
+          }),
+        },
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+
+        setForm({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        alert(
+          result.message ||
+            'Sorry, your message could not be sent. Please try again.',
+        );
+      }
+    } catch (error) {
+      console.error(
+        'Contact form error:',
+        error,
+      );
+
+      alert(
+        'Something went wrong. Please check your internet connection and try again.',
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   /* =======================================================
@@ -718,8 +792,6 @@ function App() {
           className="hero"
         >
 
-          {/* HERO COPY */}
-
           <div className="hero-copy-block">
 
             <div className="reveal">
@@ -815,10 +887,6 @@ function App() {
 
           </div>
 
-          {/* =================================================
-              HERO VISUAL
-          ================================================= */}
-
           <div
             className="hero-visual reveal reveal-delay-2"
           >
@@ -837,8 +905,6 @@ function App() {
 
             </div>
 
-            {/* TOP FLOATING LABEL */}
-
             <div className="floating-label floating-top">
 
               <span className="status-dot" />
@@ -846,8 +912,6 @@ function App() {
               learning in public
 
             </div>
-
-            {/* BOTTOM FLOATING LABEL */}
 
             <div className="floating-label floating-bottom">
 
@@ -857,20 +921,12 @@ function App() {
 
             </div>
 
-            {/* =================================================
-                CREATIVE PROFILE PHOTO
-            ================================================= */}
-
             <div className="profile-photo-float">
-
-              {/* Glow */}
 
               <div
                 className="profile-photo-glow"
                 aria-hidden="true"
               />
-
-              {/* Outer rotating rings */}
 
               <div
                 className="profile-photo-ring profile-ring-1"
@@ -881,8 +937,6 @@ function App() {
                 className="profile-photo-ring profile-ring-2"
                 aria-hidden="true"
               />
-
-              {/* Photo card */}
 
               <div className="profile-photo-card">
 
@@ -947,8 +1001,6 @@ function App() {
 
               </div>
 
-              {/* Floating photo badge */}
-
               <div className="photo-floating-badge photo-badge-top">
 
                 <span className="status-dot" />
@@ -966,10 +1018,6 @@ function App() {
               </div>
 
             </div>
-
-            {/* =================================================
-                ORIGINAL DEVELOPER CODE WINDOW
-            ================================================= */}
 
             <div className="code-float">
 
@@ -1912,6 +1960,7 @@ function App() {
                     }
                     placeholder="Your name"
                     required
+                    disabled={sending}
                   />
 
                 </div>
@@ -1934,6 +1983,7 @@ function App() {
                     }
                     placeholder="you@example.com"
                     required
+                    disabled={sending}
                   />
 
                 </div>
@@ -1957,6 +2007,7 @@ function App() {
                   }
                   placeholder="What can I help you with?"
                   required
+                  disabled={sending}
                 />
 
               </div>
@@ -1978,6 +2029,7 @@ function App() {
                   }
                   placeholder="Tell me about your project..."
                   required
+                  disabled={sending}
                 />
 
               </div>
@@ -1994,10 +2046,13 @@ function App() {
                 <button
                   className="modern-send-button"
                   type="submit"
+                  disabled={sending}
                 >
 
                   <span>
-                    Send message
+                    {sending
+                      ? 'Sending...'
+                      : 'Send message'}
                   </span>
 
                   <span className="modern-send-icon">
@@ -2025,8 +2080,8 @@ function App() {
                   Thanks,{' '}
                   {form.name ||
                     'there'}{' '}
-                  — your message is ready
-                  for a reply.
+                  — your message has been
+                  sent successfully.
 
                 </div>
 
